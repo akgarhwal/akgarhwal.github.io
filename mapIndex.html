@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #map {
+            height: 100px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <div id="map">
+        </div>
+        <script>
+            // Initialize and add the map
+            function initMap() {
+                makeMap();
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5I3RxBCN6hzAcT-vqoT8voSXHDqPju3c&callback=initMap">
+        </script>
+        <script type="text/javascript" src="./map.js"></script>
+
+</body>
+
+</html>
