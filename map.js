@@ -1,5 +1,7 @@
+// Open weather api key
 var weatherKey = "b0e74e60f082fb0478861b4892261ae0";
 var infowindow;
+// Main function to init map object and load current location of user
 function makeMap() {
     $.ajax({
         url: "http://ip-api.com/json", success: function (result) {
@@ -17,7 +19,7 @@ function makeMap() {
         }
     });
 }
-
+// function to get weather data
 function getWeather(location, map, lat, lng) {
     let url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&appid=" + weatherKey;
     $.ajax({
@@ -27,6 +29,7 @@ function getWeather(location, map, lat, lng) {
         }
     });
 }
+// function to get time data using lat and lng 
 function getTime(location, map, result, lat ,lng) {
     let url = "http://api.geonames.org/timezoneJSON?lat=" + lat + "1&lng=" + lng + "&username=rootasasa0king";
     $.ajax({
@@ -36,6 +39,7 @@ function getTime(location, map, result, lat ,lng) {
         }
     });
 }
+// function to display infowindows  
 function pop(location, map, result, time) {
     if (infowindow) infowindow.close();
     infowindow = new google.maps.InfoWindow({
