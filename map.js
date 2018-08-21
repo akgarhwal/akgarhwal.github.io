@@ -43,7 +43,7 @@ function showError(error) {
     });
 }
 function showPosition(position) {
-    alert('h');
+    // alert('h');
     //x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;  
     //getWeather(position, position.coords.latitude, position.coords.longitude);
     //alert(position);
