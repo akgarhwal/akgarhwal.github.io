@@ -1,5 +1,5 @@
 // Open weather api key
-var weatherKey = "b0e74e60f082fb0478861b4892261ae0";
+var weatherKey = "ABC";
 var infowindow;
 // Main function to init map object and load current location of user
 function makeMap() {
@@ -71,7 +71,7 @@ function getWeather(location, map, lat, lng) {
 }
 // function to get time data using lat and lng 
 function getTime(location, map, result, lat ,lng) {
-    let url = "http://api.geonames.org/timezoneJSON?lat=" + lat + "1&lng=" + lng + "&username=rootasasa0king";
+    let url = "http://api.geonames.org/timezoneJSON?lat=" + lat + "1&lng=" + lng + "&username=ABC";
     $.ajax({
         type: "GET",
         url: url, success: function (time) {
