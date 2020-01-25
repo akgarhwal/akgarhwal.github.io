@@ -73,7 +73,8 @@ a:focus, a:hover {
 	margin:0
 }
 .banner-agile {
-	background: url(../images/bg.jpg) no-repeat 0px 0px;
+	/* background: url(../images/bg.jpg) no-repeat 0px 0px; */
+	background-color: #000;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -159,7 +160,9 @@ a:focus, a:hover {
 	-ms-transition: 0.5s all;
 }
 
-
+.desc {
+	padding: 2em 0 0 0 !important;
+}
 /*-- header-nav --*/
 .nav-agile {
     background:#07cb79;
@@ -2269,6 +2272,10 @@ Social Media
 
 
 /* Icon */
+
+.handle-icons {
+	padding: 4em 0 0 0 !important;
+}
 
 	.icon {
 		text-decoration: none;
