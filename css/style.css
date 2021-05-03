@@ -437,7 +437,7 @@ h3.w3l_head, h3.agileits-title, h3.agile-title, h3.agile-contact, div#wthreeskil
 		-ms-transition: all 0.3s ease-out;
 		-o-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
-		width: 20%;
+		width: 25%;
 		float: left;
 		padding: 10px 0;
 		border-bottom: 1px ridge #777;
@@ -795,10 +795,21 @@ li.aitsaitsresumewthreeli-1 {
 	padding: 1em 13px 0 0;
 }
 
-.work-right {
+.border-left-1px {
 	border-left: 1px solid #999;
+}
+
+.border-right-1px {
+	border-right: 1px solid #999;
+}
+
+.work-right {
 	padding: 1em 0 2em 13px;
 	text-align: left;
+}
+
+.green-color {
+	color: green !important;
 }
 
 .work-info h4 {
@@ -1134,7 +1145,7 @@ Social Media
 		min-height:750px;
 	}
 	.banner-info-w3l  {
-		padding:13em 0 0;
+		padding:3em 0 0;
 	}
 }
 @media(max-width: 1440px){
@@ -2502,3 +2513,8 @@ Social Media
 			margin-left: 2em;
 		}
 
+
+
+.about-me {
+	font-size: 26px;
+}
