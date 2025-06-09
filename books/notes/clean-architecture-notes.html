@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Clean Architecture | Abhinesh's Bookshelf</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/components.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container blog-post-content">
+        <article>
+            <h1 class="post-title">My Notes on: Clean Architecture</h1>
+            <p class="post-meta-single">
+                Book: <em>Clean Architecture: A Craftsman's Guide to Software Structure and Design</em> by Robert C. Martin<br>
+                <a href="https://www.goodreads.com/book/show/18043011-clean-architecture" target="_blank">View on Goodreads</a>
+            </p>
+
+            <h2>Overall Impression & Rating</h2>
+            <div class="book-rating" style="font-size: 1.5rem; margin-bottom:1rem;">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star">★</span> </div>
+            <p>A very important book that lays out timeless principles for software architecture. "Uncle Bob" emphasizes designing systems that are independent of frameworks, UI, databases, and other external agencies, making them easier to test, maintain, and evolve. While some examples feel a bit dated, the core principles are as relevant as ever.</p>
+
+            <h2>Key Principles & Concepts:</h2>
+            <ul>
+                <li><strong>The Dependency Rule:</strong> Source code dependencies can only point inwards. Nothing in an inner circle can know anything at all about something in an outer circle. This is the cornerstone of Clean Architecture.</li>
+                <li><strong>Entities:</strong> Enterprise-wide business rules. They are the core of the application.</li>
+                <li><strong>Use Cases (Interactors):</strong> Application-specific business rules. They orchestrate the flow of data to and from entities.</li>
+                <li><strong>Interface Adapters:</strong> Convert data from the format most convenient for use cases and entities, to the format most convenient for external agencies like the Database, the Web, or the UI. Presenters, Views, Controllers belong here.</li>
+                <li><strong>Frameworks & Drivers:</strong> The outermost layer, generally composed of frameworks and tools such as the Database, the Web Framework, etc. These are details that should not pollute the inner circles.</li>
+                <li><strong>SOLID Principles:</strong> Reiterates their importance in achieving clean architecture (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion).</li>
+                <li><strong>Screaming Architecture:</strong> The architecture of an application should scream what the application is about (e.g., a healthcare system, an e-commerce platform), not what frameworks it uses.</li>
+                <li><strong>The Humble Object Pattern:</strong> Pushing complexity away from difficult-to-test areas (like UIs or database interaction layers) into testable interactors or presenters.</li>
+            </ul>
+
+            <h2>My Reflections:</h2>
+            <p>The emphasis on making policy (business rules) a first-class citizen and decoupling it from details (IO, frameworks) is powerful. It forces a clear separation of concerns. The idea that the database is a "detail" or the web is a "delivery mechanism" can be a paradigm shift for many developers accustomed to framework-first development.</p>
+            <p>Testing becomes significantly easier when core logic is isolated. Mocking external dependencies at the boundaries becomes more straightforward.</p>
+            
+            <blockquote>
+                <p>"Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. The ultimate goal is to minimize the lifetime cost of the system and to maximize programmer productivity."</p>
+            </blockquote>
+
+            <h2>Challenges in Practice:</h2>
+            <ul>
+                <li>Can feel like "over-engineering" for very small or simple projects.</li>
+                <li>Requires discipline from the team to maintain the boundaries.</li>
+                <li>Frameworks often encourage a different way of working, so adhering to Clean Architecture principles might mean "swimming upstream" against the framework's conventions at times.</li>
+            </ul>
+             <hr style="margin: 2rem 0;">
+            <a href="../../bookshelf.html" class="back-to-blogs">← Back to Bookshelf</a>
+        </article>
+    </main>
+
+    <div id="footer"></div>    <script src="../../js/main.js"></script>
+</body>
+</html>

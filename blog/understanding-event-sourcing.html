@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Event Sourcing | Abhinesh's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/components.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container blog-post-content">
+        <article>
+            <h1 class="post-title">Understanding Event Sourcing Patterns</h1>
+            <p class="post-meta-single">Published on: May 15, 2025 by Abhinesh</p>
+
+            <p>Event Sourcing is an architectural pattern that has gained significant traction in modern software development, especially in the context of microservices and distributed systems. Instead of storing the current state of an entity, Event Sourcing focuses on capturing all changes to an application state as a sequence of immutable events. This seemingly simple shift in perspective can have profound implications on how we design, build, and maintain our systems.</p>
+
+            <h2>What is Event Sourcing?</h2>
+            <p>At its core, Event Sourcing means that every change to the state of an application is captured as an event. These events are stored in an append-only log, often called an event store. Think of it like a ledger in accounting: every transaction (event) is recorded, and the current balance (state) can be derived by replaying these transactions.</p>
+            <p>For example, in an e-commerce system, instead of updating a customer's order status directly in a database row, you would record events like <code>OrderPlaced</code>, <code>PaymentProcessed</code>, <code>OrderShipped</code>, and <code>OrderDelivered</code>. The current state of the order can be reconstructed at any time by replaying these events in sequence.</p>
+
+            <img src="../assets/images/blog-post-image.png" alt="Conceptual diagram of Event Sourcing" class="blog-image">
+            <h2>Benefits of Event Sourcing</h2>
+            <p>Adopting Event Sourcing can offer several advantages:</p>
+            <ul>
+                <li><strong>Complete Audit Trail:</strong> Since all changes are stored as events, you have a full history of how an entity reached its current state. This is invaluable for debugging, auditing, and understanding system behavior over time.</li>
+                <li><strong>Temporal Queries:</strong> You can reconstruct the state of an entity at any point in the past. This allows for powerful analytical capabilities and understanding historical trends.</li>
+                <li><strong>Improved Debugging:</strong> When an issue occurs, you can replay events to understand the exact sequence of actions that led to the problem.</li>
+                <li><strong>Decoupling and Flexibility:</strong> Events can be consumed by multiple downstream services or read models, allowing for greater flexibility in how data is processed and presented. This naturally fits with patterns like CQRS (Command Query Responsibility Segregation).</li>
+                <li><strong>Performance:</strong> Writing events is typically fast as it's an append-only operation. Read performance can be optimized by creating specialized read models (projections) tailored for specific query needs.</li>
+            </ul>
+
+            <h2>Challenges to Consider</h2>
+            <p>While powerful, Event Sourcing is not a silver bullet and comes with its own set of challenges:</p>
+            <ul>
+                <li><strong>Complexity:</strong> It can introduce a higher level of complexity compared to traditional state-based persistence, especially for teams new to the pattern.</li>
+                <li><strong>Event Schema Evolution:</strong> As your application evolves, event schemas may need to change. Handling different versions of events (event versioning) requires careful planning.</li>
+                <li><strong>Snapshotting:</strong> For entities with a very long history of events, replaying all events to reconstruct state can become slow. Snapshotting (periodically storing a snapshot of the current state) is often necessary to optimize this.</li>
+                <li><strong>Querying:</strong> Querying the event store directly for complex queries can be inefficient. This is often addressed by using projections to create dedicated read models.</li>
+            </ul>
+
+            <h2>When to Consider Event Sourcing</h2>
+            <p>Event Sourcing is particularly well-suited for:</p>
+            <ul>
+                <li>Domains where auditing and historical data are critical (e.g., finance, healthcare).</li>
+                <li>Complex business domains where understanding the "why" behind state changes is important.</li>
+                <li>Applications that require high scalability and resilience.</li>
+                <li>Systems that can benefit from CQRS and multiple read models.</li>
+            </ul>
+
+            <h3>Example Code Snippet (Conceptual)</h3>
+            <p>Here's a very simplified conceptual look at how an event might be handled in Go:</p>
+            <pre><code class="language-go">// Define an event interface
+type Event interface {
+    Apply(aggregate *OrderAggregate)
+}
+
+// Example: OrderPlaced event
+type OrderPlaced struct {
+    OrderID    string
+    CustomerID string
+    Items      []string
+    Timestamp  time.Time
+}
+
+func (e OrderPlaced) Apply(aggregate *OrderAggregate) {
+    aggregate.ID = e.OrderID
+    aggregate.CustomerID = e.CustomerID
+    aggregate.Items = e.Items
+    aggregate.Status = "PLACED"
+    aggregate.CreatedAt = e.Timestamp
+    aggregate.UpdatedAt = e.Timestamp
+}
+
+// OrderAggregate represents the current state
+type OrderAggregate struct {
+    ID          string
+    CustomerID  string
+    Items       []string
+    Status      string
+    CreatedAt   time.Time
+    UpdatedAt   time.Time
+    // Version is important for optimistic concurrency
+    Version     int
+}
+
+func NewOrderAggregate(orderID string) *OrderAggregate {
+    return &OrderAggregate{ID: orderID}
+}
+
+// Reconstruct state by applying events
+func (agg *OrderAggregate) ApplyEvents(events []Event) {
+    for _, event := range events {
+        event.Apply(agg)
+        agg.Version++
+    }
+}</code></pre>
+
+            <blockquote>
+                <p>Event Sourcing is not just about storage; it's a different way of thinking about state and behavior in your application. It encourages a focus on business events as first-class citizens.</p>
+            </blockquote>
+
+            <p>In conclusion, Event Sourcing offers a powerful paradigm for building robust, auditable, and scalable systems. While it introduces its own complexities, the benefits can be substantial for the right type of application. As with any architectural pattern, it's crucial to understand the trade-offs and determine if it aligns with your specific project requirements and team capabilities.</p>
+
+            <a href="../blogs.html" class="back-to-blogs">← Back to All Blogs</a>
+        </article>
+    </main>
+
+    <div id="footer"></div>    <script src="../js/main.js"></script> </body>
+</html>
