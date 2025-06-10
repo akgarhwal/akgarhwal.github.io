@@ -91,7 +91,7 @@ header nav {
     transition: color 0.3s, background-color 0.3s;
     padding: 0.5rem 0.5rem; /* Horizontal padding reduced from 0.75rem to 0.5rem */
     border-radius: 4px;
-    font-size: 0.9rem; /* Font size remains the same for now */
+    font-size: 1rem; /* Font size remains the same for now */
     white-space: nowrap; /* This is key: prevents text like "Paper Shelf" from breaking into two lines */
 }
 .nav-links button#darkModeToggle {
@@ -1128,4 +1128,8 @@ body.dark-mode a.tech-link-item:hover, body.dark-mode a.tech-link-item:focus {
         justify-content: center; /* Center social links on mobile */
         gap: 1.25rem; /* Wider gap for touch targets on mobile */
     }
+}
+
+.green-text {
+    color: #4CAF50 !important;
 }
