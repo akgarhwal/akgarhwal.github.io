@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Paxos Made Simple | Abhinesh's Paper Shelf</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/components.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container blog-post-content"> <article>
+            <h1 class="post-title">My Notes on: Paxos Made Simple</h1>
+            <p class="post-meta-single">
+                Original Paper: <a href="https://lamport.azurewebsites.net/pubs/paxos-simple.pdf" target="_blank">Paxos Made Simple</a> by Leslie Lamport
+            </p>
+
+            <h2>Core Problem Addressed</h2>
+            <p>The paper addresses the problem of achieving consensus among a collection of processes in a distributed system, especially in the presence of failures (non-Byzantine, such as process crashes or message loss). This is fundamental for building fault-tolerant distributed databases, replicated state machines, etc.</p>
+
+            <h2>Key Takeaways & Concepts</h2>
+            <ul>
+                <li><strong>Roles:</strong> Proposers, Acceptors, and Learners. A process can take on multiple roles.</li>
+                <li><strong>Proposal Numbers:</strong> Each proposal has a unique, ordered proposal number `n`. This is crucial for distinguishing older proposals from newer ones.</li>
+                <li><strong>Two Phases:</strong>
+                    <ul>
+                        <li><strong>Phase 1 (Prepare):</strong> A proposer chooses a new proposal number `n` and sends a `prepare(n)` request to a majority of acceptors. Acceptors respond with a promise not to accept any proposal numbered less than `n`, and if they've already accepted a proposal, they include the highest-numbered proposal they've accepted.</li>
+                        <li><strong>Phase 2 (Accept):</strong> If the proposer receives responses from a majority, it chooses a value `v`. If any acceptors reported previously accepted values, the proposer MUST choose the value from the highest-numbered proposal among those responses. Otherwise, it can choose its own value. It then sends an `accept(n, v)` request to the acceptors. Acceptors accept the proposal `(n,v)` if they haven't promised to consider only higher-numbered proposals.</li>
+                    </ul>
+                </li>
+                <li><strong>Learning a Chosen Value:</strong> Once a proposal is accepted by a majority of acceptors, the value is chosen. Learners find out about the chosen value.</li>
+                <li><strong>Safety Properties:</strong> Only a single value can be chosen, and if a value is chosen, processes can eventually learn it.</li>
+            </ul>
+
+            <h2>My Summary & Thoughts</h2>
+            <p>Lamport's "Paxos Made Simple" indeed makes a complex topic more digestible, though it still requires careful reading. The core idea of using proposal numbers to establish an ordering and the two-phase commit-like structure (prepare and accept) are elegant ways to ensure safety.</p>
+            <p>The distinction between choosing a value and learning a chosen value is important. The paper focuses primarily on the former. The requirement for a proposer to adopt a previously accepted value if one exists is key to preventing conflicting values from being chosen.</p>
+
+            <blockquote>
+                <p>"The Paxos algorithm works by electing a 'leader' (the proposer whose proposal is chosen) for each round of decision-making, but it does so without a dedicated leader election phase visible to the outside." (My interpretation/summary point)</p>
+            </blockquote>
+
+            <h2>Challenges / Points of Confusion (Initial Read)</h2>
+            <ul>
+                <li>The concept of "liveness" (ensuring a value is eventually chosen) is more complex and often requires a distinguished proposer or leader election mechanism built on top of or integrated with Paxos to avoid dueling proposers.</li>
+                <li>Handling acceptor failures and re-proposals.</li>
+            </ul>
+
+            <h2>Connections to Other Works</h2>
+            <p>This paper is foundational. Raft, for example, was designed to be more understandable than Paxos while providing similar safety guarantees, by explicitly including leader election and log replication as distinct parts of the algorithm.</p>
+            <hr style="margin: 2rem 0;">
+            <a href="../../papers.html" class="back-to-blogs">← Back to Paper Shelf</a> </article>
+    </main>
+
+    <div id="footer"></div>    <script src="../../js/main.js"></script> </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Shelf | Abhinesh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/components.js"></script></head>
+<body>
+    <div id="header"></div>
+    <main class="container">
+        <h1 class="page-title">Paper Shelf</h1>
+        <ul class="list-styled">
+            <li id="paxos-made-simple">
+                <h3>Paxos Made Simple</h3>
+                <p class="paper-authors">Author: Leslie Lamport</p>
+                <p class="abstract">This paper presents the Paxos algorithm for implementing a fault-tolerant distributed system. It simplifies the original presentation of Paxos, making it more accessible. Essential for understanding distributed consensus.</p>
+                <div class="paper-links">
+                    <a href="https://lamport.azurewebsites.net/pubs/paxos-simple.pdf" target="_blank" class="button-small">Read Original Paper</a>
+                    <a href="papers/notes/paxos-made-simple-notes.html" class="button-small">View My Notes</a>
+                </div>
+                <div class="tags">
+                    <span class="tag">Distributed Systems</span>
+                    <span class="tag">Consensus Algorithms</span>
+                    <span class="tag">Fault Tolerance</span>
+                </div>
+            </li>
+            <li>
+                <h3>In Search of an Understandable Consensus Algorithm (Raft)</h3>
+                <p class="paper-authors">Authors: Diego Ongaro and John Ousterhout</p>
+                <p class="abstract">Raft is a consensus algorithm designed as an alternative to Paxos. It was meant to be easier to understand than Paxos by decomposing the consensus problem into leader election, log replication, and safety.</p>
+                <div class="paper-links">
+                    <a href="https://raft.github.io/raft.pdf" target="_blank" class="button-small">Read Original Paper</a>
+                    </div>
+                <div class="tags">
+                    <span class="tag">Distributed Systems</span>
+                    <span class="tag">Consensus Algorithms</span>
+                    <span class="tag">Raft</span>
+                </div>
+            </li>
+            <li>
+                <h3>Dynamo: Amazon’s Highly Available Key-value Store</h3>
+                <p class="paper-authors">Authors: Giuseppe DeCandia, et al.</p>
+                <p class="abstract">Describes Dynamo, a highly available and scalable distributed data store built by Amazon. It uses a synthesis of well-known techniques to achieve scalability and availability.</p>
+                 <div class="paper-links">
+                    <a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf" target="_blank" class="button-small">Read Original Paper</a>
+                    <a href="papers/notes/dynamo-amazon-notes.html" class="button-small">View My Notes</a>
+                </div>
+                <div class="tags">
+                    <span class="tag">Distributed Systems</span>
+                    <span class="tag">NoSQL</span>
+                    <span class="tag">Scalability</span>
+                    <span class="tag">Key-Value Store</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <div id="footer"></div>    <script src="js/main.js"></script>
+</body>
+</html>

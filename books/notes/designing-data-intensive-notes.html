@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Designing Data-Intensive Applications | Abhinesh's Bookshelf</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/components.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main class="container blog-post-content"> <article>
+            <h1 class="post-title">My Notes on: Designing Data-Intensive Applications</h1>
+            <p class="post-meta-single">
+                Book: <em>Designing Data-Intensive Applications</em> by Martin Kleppmann<br>
+                <a href="https://www.goodreads.com/book/show/23 Designing_Data_Intensive_Applications" target="_blank">View on Goodreads</a>
+            </p>
+
+            <h2>Overall Impression & Rating</h2>
+            <div class="book-rating" style="font-size: 1.5rem; margin-bottom:1rem;">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+            </div>
+            <p>This book is an absolute masterpiece for anyone involved in designing or understanding modern data systems. It masterfully bridges theory and practice, covering a vast landscape of topics from fundamental principles to cutting-edge research. Truly a 5/5 star book that I will revisit often.</p>
+
+            <h2>Key Takeaways by Part:</h2>
+            
+            <h3>Part I: Foundations of Data Systems</h3>
+            <ul>
+                <li><strong>Reliability, Scalability, Maintainability:</strong> These are the core concerns. Kleppmann provides clear definitions and discusses trade-offs.</li>
+                <li><strong>Data Models & Query Languages:</strong> Excellent overview of relational vs. document models, graph databases, and query languages. Highlights how data models impact what an application can do.</li>
+                <li><strong>Storage and Retrieval:</strong> Deep dive into how databases work under the hood: log-structured storage (LSM-trees), B-trees, column-oriented storage. Understanding these is crucial for performance.</li>
+                <li><strong>Encoding and Evolution:</strong> Importance of data encoding formats (JSON, XML, Avro, Thrift, Protocol Buffers) and strategies for schema evolution.</li>
+            </ul>
+
+            <h3>Part II: Distributed Data</h3>
+            <ul>
+                <li><strong>Replication:</strong> Single-leader, multi-leader, and leaderless replication. Pros, cons, and consistency models associated with each.</li>
+                <li><strong>Partitioning:</strong> Strategies for sharding data (key-range, hash-based) and challenges like rebalancing and request routing.</li>
+                <li><strong>Transactions:</strong> ACID properties, two-phase commit (2PC), and the challenges of distributed transactions. Discussion of serializability and weaker isolation levels.</li>
+                <li><strong>The Trouble with Distributed Systems:</strong> Unreliable networks, clocks, process pauses – and why these make distributed consensus hard.</li>
+                <li><strong>Consistency and Consensus:</strong> Linearizability, causal consistency, eventual consistency. Deep dive into algorithms like Paxos, Raft (briefly), and ZAB. The role of consensus in leader election, atomic broadcast, etc.</li>
+            </ul>
+            
+            <h3>Part III: Derived Data</h3>
+            <ul>
+                <li><strong>Batch Processing:</strong> MapReduce paradigm and its successors (Spark). How batch processing is used for analytics and building derived datasets.</li>
+                <li><strong>Stream Processing:</strong> Concepts of event streams, stream processing systems, windowing, and dealing with time (event time vs. processing time).</li>
+                <li><strong>The Future of Data Systems:</strong> Thoughts on unbundling databases, data integration, and ethical considerations.</li>
+            </ul>
+
+            <h2>Favorite Quotes/Concepts:</h2>
+            <blockquote>
+                <p>"Complexity has a habit of sneaking up on you." - A recurring theme emphasizing the need for careful design.</p>
+            </blockquote>
+            <blockquote>
+                <p>"There is no one-size-fits-all solution in data systems; everything is a trade-off." - This is perhaps the most important lesson from the book.</p>
+            </blockquote>
+
+            <h2>How I'll Apply This:</h2>
+            <p>This book has fundamentally reshaped how I think about system design. When evaluating a new technology or designing a new service, I'll be much more critical about its claims regarding reliability, scalability, and consistency. The detailed explanations of internal mechanisms will help in debugging and performance tuning. Understanding the trade-offs between different replication and partitioning strategies is invaluable.</p>
+            <hr style="margin: 2rem 0;">
+            <a href="../../bookshelf.html" class="back-to-blogs">← Back to Bookshelf</a>
+        </article>
+    </main>
+
+    <div id="footer"></div>    <script src="../../js/main.js"></script>
+</body>
+</html>

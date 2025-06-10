@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Abhinesh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/components.js"></script></head>
+<body>
+    <div id="header"></div>
+    <main class="container">
+        <h1 class="page-title">Professional Experience</h1>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Senior Software Engineer</h3>
+                    <p class="company-name"><a href="https://www.intuit.com/" target="_blank">Intuit Inc</a></p>
+                    <p class="duration">Feb 2024 – Present</p>
+
+                    <h3>Transaction Sync Service</h3>
+                    <p>Redesigned the transaction ingestion pipeline for Credit Karma (CK) by removing PFM(legacy service) and MySQL dependencies, simplifying the architecture, reducing costs, and improving performance and scalability.</p>
+
+                    <h4>Key Contributions:</h4>
+                    <ul>
+                        <li>Designed and implemented new ingestion flows in TTS for accounts (as metadata) and transactions.</li>
+                        <li>Built deduplication and reconciliation logic using DynamoDB and FDI.</li>
+                        <li>Developed a parity testing framework for end-to-end validation.</li>
+                        <li>Designed separate deployment pipelines for ingestion and CK APIs to improve scalability.</li>
+                        <li>Enabled large payload processing (>1 MB), previously blocked by PFM/Kafka.</li>
+                        <li>Resolved a critical issue affecting CK users with numerous accounts, where querying transactions for selected accounts exceeded DynamoDB’s 4KB filter limit. After analysis, restructured the query using NOT IN operator, enabling 100% successful<sup>*</sup> queries without hitting request size limits.</li>
+                    </ul>
+
+                    <h4>Technologies Used:</h4>
+                    <ul class="technologies-list">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>AWS DynamoDB</li>
+                        <li>Apche Kafka</li>
+                        <li>Apache Pulsar</li>
+                        <li>MySQL</li>
+                    </ul>
+
+                    <hr/>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Software Engineer 2</h3>
+                    <p class="company-name"><a href="https://www.intuit.com/" target="_blank">Intuit Inc</a></p>
+                    <p class="duration">Jan 2022 – Jan 2024</p>
+
+                    <h3>Mint to Credit Karma (CK) Migration</h3>
+                    <p>Led backend development for seamless migration of Mint users (including full transaction history) to CK, impacting over 2M users.</p>
+
+                    <h4>Awards:</h4>
+                    <ul>
+                        <li>🏆 Won the <b>PAG Excellence Award (2024)</b> for this initiative.</li>
+                    </ul>   
+
+                    <h4>Key Contributions:</h4>
+                    <ul>
+                        <li>Developed an event-driven migration workflow using Kafka with rollback and retry support.</li>
+                        <li>Designed and developed a robust migration pipeline to move full historical transaction data from MySQL to DynamoDB, leveraging batching and retry logic to ensure reliability, scalability, and zero data loss.</li>
+                        <li>Enabled secure, asynchronous PII data transfer to CK via data-bridge.</li>
+                        <li>Built a pipeline to update Braze with real-time migration statuses.</li>
+                        <li>Designed comprehensive Splunk dashboards to track live migration metrics and errors.</li>
+                        <li>Migration Achievements: 
+                            <ul>
+                                <li><strong>2.08M</strong> users initiated migration</li>
+                                <li><strong>1.65M</strong> successful migrations</li>
+                                <li><strong>99.95%</strong> success rate</li>
+                                <li><strong>80.12%</strong> conversion rate</li>
+                                <li><strong>P95 migration latency:</strong> ~2 minutes</li>
+                                <li><strong>Max daily migrations:</strong> 52K+</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr/>
+
+                    <h4>Key Contributions:</h4>
+                    <ul>
+                        <li>Developed transaction APIs with cursor-based pagination and in-memory search for low-latency, scalable querying from scratch for Credit Karma.</li>                        
+                        <li>Completed OMS 3.0 Migration for multiple services without production incidents.</li>
+                        <li>Completed IDPS migration across 5+ legacy services without any production incidents with tight timelines.</li>
+                        <li>Built a configurable DLQ backlog processor for a legacy service, reducing post-incident message processing time from hours to minutes.</li>
+                    </ul>
+
+                    <h4>Awards:</h4>
+                    <ul>
+                        <li>🏆 Won the <b>Intuit India Super Star (FY23-Q3)</b> award for delivering high-quality work under tight timelines.</li>
+                    </ul>   
+
+                    <h4>Technologies Used:</h4>
+                    <ul class="technologies-list">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>AWS DynamoDB</li>
+                        <li>Apche Kafka</li>
+                        <li>Apache Pulsar</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Software Engineer</h3>
+                    <p class="company-name"><a href="https://www.zynga.com/" target="_blank">Zynga India</a></p>
+                    <p class="duration">July 2020 – Nov 2021</p>
+
+                    <p>Zynga is a leading developer of the world's most popular social games that are played by millions of people around the world each day.</p>
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                        <li>Managing global release for localization libraries and tools.</li>
+                        <li>Designed and developed finnish support for an internationalization library which allows game teams to release games in finnish region.</li>
+                        <li>Designed and developed a feature which allows the game team to change any translated strings to provide a better experience for users.</li>
+                        <li>Designed and developed ordinal number support for an internationalization unity library.</li>
+                        <li>Working on tools and web applications used for automation of the translation process which provide continuous translation of strings to the game team without any manual support.</li>
+                        <li>Working on continuous localization engineering support for Zynga India and UK games including FarmVille 2, Farm 3 and CSR 2.</li>
+                    </ul>
+
+                    <h4>Technologies Used:</h4>
+                    <ul class="technologies-list">
+                        <li>AWS (S3, EC2, Lambda)</li>
+                        <li>CouchDB</li>
+                        <li>C#</li>
+                        <li>JavaScript (jQuery)</li>
+                        <li>PHP</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Software Engineer</h3>
+                    <p class="company-name"><a href="https://www.optmyzr.com/" target="_blank">Optmyzr Inc.</a></p>
+                    <p class="duration">Sept 2018 – July 2020</p>
+                    
+                    <p>Optmyzr is a leading provider of marketing software for the ads platforms of Google, Microsoft, Facebook and Amazon with customers in over 50 countries. </p>
+
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                        <li><a href="https://help.optmyzr.com/en/collections/3546303-ad-text-optimization" target="_blank">Ad Text Optimization</a> helps to identify high performing Ad content across thousands of Ads running in Google Ads accounts. It offers bulk optimizations for editing underperforming Ad text and for creating new Ads as per users’ business strategy. The tool processed over 300M Ads and modified/created around 1M Ads in one quarter after release, aiding user requirements like changing promotional offers, seasonal variations, etc.</li>
+
+                        <li><a href="https://help.optmyzr.com/en/collections/1798299-ppc-policy-and-audits" target="_blank">PPC Policy and Audits</a> builder facilitates an automated customizable framework to create account management policies (business-specific audit templates). It helps in streamlining pay-per-click account maintenance by regularly monitoring account health and suggesting optimization opportunities. The customizable policies are used by users for both rolled-up and granular analysis of an account’s performance.</li>
+
+                        <li><a href="https://help.optmyzr.com/en/articles/3204128-optimize-budgets-multi-account-portfolio-user-guide" target="_blank">Multi-Account Budget Optimization</a> helps advertisers achieve their PPC budget goals across multiple ad platforms like Google, Microsoft, Facebook, and Amazon. The tool analyses historical spend data to forecast the cost of Ad campaigns, thus helping advertisers hit the right level of Ad spend. The tool also sets automatic alerts to curb overspending of budgets.</li>
+                    </ul>
+
+                    <h4>Technologies Used:</h4>
+                    <ul class="technologies-list">
+                        <li>AWS (S3, EC2, Lambda, DynamoDB)</li>
+                        <li>C#</li>
+                        <li>MySQL</li>
+                        <li>Redis</li>
+                        <li>Git</li>
+                        <li>PHP</li>
+                        <li>BackboneJS</li>
+                        <li>HTML & CSS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Software Engineering Intern</h3>
+                    <p class="company-name"><a href="https://www.synopsys.com/" target="_blank">Synopsys India</a></p>
+                    <p class="duration">Sept 2017 – Aug 2018</p>
+
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                        <li>Optimized chip testing workflows by parallelizing quality assurance checks, clustering similar test designs for batch execution, and identifying runtime bottlenecks through profiling and analysis. This reduced test runtimes from 24 to 8 hours, improving overall efficiency by 300%.</li>
+                        <li>Developed an internal adapter tool to standardize customer-specific input data. The tool parsed input datasets, generated dependency maps, and used topological sorting to automatically build runset configurations. This significantly streamlined setup processes and minimized human error.</li>
+                    </ul>
+
+                    <h4>Technologies Used:</h4>
+                    <ul class="technologies-list">
+                        <li>Linux</li>
+                        <li>Python</li>
+                        <li>Bash Scripting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Member at Cypher Student Organization </h3>
+                    <p class="company-name">Cypher | Lovely Professional University</p>
+                    <p class="duration">Jan 2016 - May-2017</p>
+                    <p>
+                        Cypher is a student-led organization at LPU that promotes competitive programming and technical excellence. As a core member, I contributed as a problem setter for internal coding competitions and mentored junior students eager to learn programming fundamentals.
+                    </p>
+
+                    <h4>Key Contributions:</h4>
+                    <ul>
+                        <li>Designed and tested problems for university-level programming contests.</li>
+                        <li>Conducted tutoring sessions to help junior students build problem-solving and coding skills.</li>
+                        <li>Played a key role in fostering a culture of coding and peer learning within the campus community.</li>
+                        <li>Organized and managed a monthly coding contest series for over a year.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>GeeksforGeeks Campus Ambassador at LPU</h3>
+                    <p class="company-name">GeeksforGeeks | Lovely Professional University</p>
+                    <p class="duration">Aug 2016 - Jul 2017</p>
+                    <p>As a Campus Ambassador, I represented GeeksforGeeks at LPU by driving technical engagement and fostering a strong programming culture on campus. I organized workshops, coding contests, and represented the brand during college fests and tech events. I conducted programming sessions for junior students and mentored over 100 students to write their first programs.
+                    </p>
+
+                    <h4>Key Contributions:</h4>
+                    <ul>
+                        <li>Led GeeksforGeeks presence in campus-wide technical events, boosting awareness and participation.</li>
+
+                        <li>Conducted regular coding classes to help students build a strong foundation in programming.</li>
+
+                        <li>Helped over 100 students write their first lines of code, sparking their interest in software development.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>    <script src="js/main.js"></script>
+</body>
+</html>
