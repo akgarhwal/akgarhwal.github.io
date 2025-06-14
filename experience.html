@@ -18,30 +18,38 @@
                     <p class="company-name"><a href="https://www.intuit.com/" target="_blank">Intuit Inc</a></p>
                     <p class="duration">Feb 2024 – Present</p>
 
-                    <h3>Transaction Sync Service</h3>
+                    <h3>Transaction Convergence Service</h3>
                     <p>Redesigned the transaction ingestion pipeline for Credit Karma (CK) by removing PFM(legacy service) and MySQL dependencies, simplifying the architecture, reducing costs, and improving performance and scalability.</p>
 
                     <h4>Key Contributions:</h4>
                     <ul>
                         <li>Designed and implemented new ingestion flows in TTS for accounts (as metadata) and transactions.</li>
-                        <li>Built deduplication and reconciliation logic using DynamoDB and FDI.</li>
+                        <li>Implemented deduplication and reconciliation using DynamoDB and FDI APIs for consistent, accurate transaction data.</li>
+                        <li>Designed and implemented an in-memory caching solution for global category data, reducing redundant database reads and writes, eliminating per-user replication, and significantly cutting storage and operational costs.</li>
                         <li>Developed a parity testing framework for end-to-end validation.</li>
                         <li>Designed separate deployment pipelines for ingestion and CK APIs to improve scalability.</li>
                         <li>Enabled large payload processing (>1 MB), previously blocked by PFM/Kafka.</li>
-                        <li>Resolved a critical issue affecting CK users with numerous accounts, where querying transactions for selected accounts exceeded DynamoDB’s 4KB filter limit. After analysis, restructured the query using NOT IN operator, enabling 100% successful<sup>*</sup> queries without hitting request size limits.</li>
+                        <li>Resolved a critical issue affecting CK users with numerous accounts, where querying transactions for selected accounts exceeded DynamoDB’s 4KB request filter limit.</li>
+                    </ul>
+                    <hr/>
+                    <h4>Other Key Contributions:</h4>
+                    <ul>
+                        <li>Trained and deployed Google Doc AI models for bank statement extraction with a custom schema, achieving 98% accuracy and recall.</li>
+                        <li>Implemented approval and auditing features for model releases across pre-prod and prod environments, enabling controlled, traceable deployments.</li>
+                        <li>Developed an ingestion pipeline using AWS Lambda, SQS, and Step Functions to process QnA documents into RPP (internal vector DB), enabling retrieval by Intuit Assist for user query resolution with support for multiple sources and sinks.</li>
                     </ul>
 
                     <h4>Technologies Used:</h4>
                     <ul class="technologies-list">
                         <li>Java</li>
+                        <li>Python</li>
+                        <li>AWS {Lambda, SQS, State Functions, S3}</li>
                         <li>Spring Boot</li>
                         <li>AWS DynamoDB</li>
                         <li>Apche Kafka</li>
                         <li>Apache Pulsar</li>
                         <li>MySQL</li>
                     </ul>
-
-                    <hr/>
                 </div>
             </div>
 
@@ -80,12 +88,13 @@
 
                     <hr/>
 
-                    <h4>Key Contributions:</h4>
+                    <h4>Other Key Contributions:</h4>
                     <ul>
                         <li>Developed transaction APIs with cursor-based pagination and in-memory search for low-latency, scalable querying from scratch for Credit Karma.</li>                        
                         <li>Completed OMS 3.0 Migration for multiple services without production incidents.</li>
                         <li>Completed IDPS migration across 5+ legacy services without any production incidents with tight timelines.</li>
                         <li>Built a configurable DLQ backlog processor for a legacy service, reducing post-incident message processing time from hours to minutes.</li>
+                        <li>Successfully completed AuthZ (Identity 2.0) migration for three services under tight timelines to meet critical business requirements.</li>
                     </ul>
 
                     <h4>Awards:</h4>
@@ -101,6 +110,7 @@
                         <li>Apche Kafka</li>
                         <li>Apache Pulsar</li>
                         <li>MySQL</li>
+                        <li>REST and GraphQL APIs</li>
                     </ul>
                 </div>
             </div>
