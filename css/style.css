@@ -605,6 +605,67 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Achievements Grid */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.achievement-item {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+}
+
+.achievement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.achievement-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.achievement-item p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* Responsive Design for Achievements */
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .achievement-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     body {
@@ -757,11 +818,6 @@ body.dark-mode .card .notes {
     /* No specific margin-right needed here if using 'gap' on parent .button-with-icon */
 }
 
-
-
-
-
-
 /* css/style.css - Add these styles for the tech stack section */
 
 .tech-intro-paragraph { /* Style for the paragraph introducing the tech stack */
@@ -859,77 +915,6 @@ body.dark-mode .tech-tag:hover, body.dark-mode .tech-tag:focus {
     font-size: 1.05rem;
 }
 
-.tech-category {
-    margin-bottom: 2.5rem; /* Space between categories */
-}
-
-.tech-category h3 {
-    font-size: 1.5rem; /* Prominent category titles */
-    color: var(--primary-color); /* Category titles in accent green */
-    margin-bottom: 1rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--light-green);
-    display: flex;
-    align-items: center;
-}
-
-.tech-category h3 .category-icon-emoji { /* For emoji next to category title */
-    margin-right: 0.5em;
-    font-size: 1.3rem; /* Adjust emoji size if needed */
-}
-
-.tech-items-container {
-    display: flex;
-    flex-wrap: wrap;    /* Allow items to wrap */
-    gap: 0.75rem;       /* Space between tech items */
-}
-
-.tech-item {
-    display: inline-flex; /* Align icon and text within the item */
-    align-items: center;
-    background-color: var(--card-background); /* Subtle background for the item */
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.tech-item:hover, .tech-item:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    outline: none;
-    border-color: var(--primary-color); /* Highlight with green border on hover */
-}
-
-.tech-item .tech-logo {
-    width: 20px;            /* Consistent logo size */
-    height: 20px;
-    margin-right: 0.6em;    /* Space between logo and text */
-    /* fill is usually handled by the SVG itself or can be targetted if needed */
-}
-
-.tech-item .tech-name {
-    font-size: 0.95rem;
-    font-weight: 500;
-    /* The color will be set via inline style for brand colors */
-}
-
-
-
-
-
-
-
-
-
-/* css/style.css - New simplified styles for Tech Stack section */
-
-.tech-intro-paragraph {
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-}
-
 .tech-category-simple { /* New main wrapper for each category block */
     margin-bottom: 1rem; /* Space between categories */
 }
@@ -1000,14 +985,6 @@ body.dark-mode a.tech-link-item:hover, body.dark-mode a.tech-link-item:focus {
 .core-concepts-list li {
     margin-bottom: 0.4rem;
 }
-
-
-
-
-
-
-
-
 
 /* For Home Mage redesign */
 
