@@ -15,7 +15,6 @@ const headerContent = `
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="experience.html">Experience</a></li>
-
             <li><button id="darkModeToggle">Dark Mode</button></li>
         </ul>
     </nav>

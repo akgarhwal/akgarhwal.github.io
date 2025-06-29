@@ -12,6 +12,17 @@
         <h1 class="page-title">Paper Shelf</h1>
         <ul class="list-styled">
             <li id="paxos-made-simple">
+                <h3>Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service</h3>
+                <p class="abstract"><b>Summary</b>: DynamoDB ensures ultra-low latency and high availability through a range of internal systems. To handle replica failures, it uses log replicas which is lightweight, fast-to-attach nodes that store just recent write-ahead logs (WAL), maintaining write quorum without full data rebuilds. For bursty or on-demand traffic, adaptive capacity reallocates unused throughput from other partitions to hotspots. To mitigate metadata scaling and availability risks, DynamoDB developed MemDS, an in-memory distributed datastore that stores and replicates all metadata in memory and scales horizontally to handle the entire incoming request rate. It specifically receives asynchronous calls from request routers which ensure a consistent traffic flow to MemDS. WAL also powers point-in-time recovery (PITR) by replaying logs during backup and restore. Multi-Paxos ensures consistent replication with minimal latency, using a long-lived leader to avoid constant elections. During deployments, DynamoDB uses read-write aware rollouts means read changes will be deployed before write changes, ensuring compatibility and smooth rollbacks.</p>
+                <div class="paper-links">
+                    <a href="https://www.amazon.science/publications/amazon-dynamodb-a-scalable-predictably-performant-and-fully-managed-nosql-database-service" target="_blank" class="button-small">Read Original Paper</a>
+                    <!-- <a href="papers/notes/paxos-made-simple-notes.html" class="button-small">View My Notes</a> -->
+                </div>
+                <div class="tags">
+                    <span class="tag">Distributed NoSQL Database</span>
+                </div>
+            </li>
+            <!-- <li id="paxos-made-simple">
                 <h3>Paxos Made Simple</h3>
                 <p class="paper-authors">Author: Leslie Lamport</p>
                 <p class="abstract">This paper presents the Paxos algorithm for implementing a fault-tolerant distributed system. It simplifies the original presentation of Paxos, making it more accessible. Essential for understanding distributed consensus.</p>
@@ -52,7 +63,7 @@
                     <span class="tag">Scalability</span>
                     <span class="tag">Key-Value Store</span>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </main>
 
