@@ -537,7 +537,7 @@ body.dark-mode .blog-post-content article pre {
     background-color: #222; /* Darker for dark mode if needed */
 }
 .blog-post-content article code { /* Covers both inline and block */
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: Lora !important;
 }
 
 .blog-post-content article code:not(pre > code) { /* Inline code only */
