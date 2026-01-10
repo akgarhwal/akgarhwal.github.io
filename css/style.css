@@ -311,7 +311,7 @@ body.dark-mode .card .notes, body.dark-mode .card .book-meta { color: #bbb; }
     position: relative;
     margin: 2rem auto; /* Centered timeline */
     padding: 1rem 0;
-    max-width: 700px; /* Constrain timeline width */
+    max-width: 100%; /* Flexible width based on device */
 }
 .timeline::before {
     content: '';
